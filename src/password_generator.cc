@@ -4,8 +4,7 @@
 
 PasswordGenerator::PasswordGenerator() = default;
 
-void PasswordGenerator::Fill(std::vector<char> &password,
-                             const std::vector<char> &pool,
+void PasswordGenerator::Fill(std::vector<char> &password, const std::vector<char> &pool,
                              unsigned int count) {
   for (unsigned int i = 0; i < count; ++i) {
     std::uniform_int_distribution<unsigned long> udist(0, pool.size() - 1);

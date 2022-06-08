@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
-project(pwdgen)
+
+project(pwdgen VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -8,6 +9,10 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
 endif()
 
 add_executable(pwdgen src/main.cc src/password_generator.cc)
+
+
+configure_file(src/version.h.in generated/version.h)
+include_directories(${PROJECT_BINARY_DIR}/generated)
 
 install(TARGETS pwdgen)
 

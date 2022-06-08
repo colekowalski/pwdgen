@@ -17,8 +17,7 @@ struct GenerationOptions {
     // If we have at least one class with a '0' max length (unlimited) we can
     // produce the requested password
     if ((symbols && max_symbols == 0) || (digits && max_digits == 0) ||
-        (uppercase && max_uppercase == 0) ||
-        (lowercase && max_lowercase == 0)) {
+        (uppercase && max_uppercase == 0) || (lowercase && max_lowercase == 0)) {
       return true;
     }
 
@@ -38,17 +37,13 @@ class PasswordGenerator {
   std::string GeneratePassword(const GenerationOptions& opts);
 
  private:
-  const std::vector<char> DIGITS = {'0', '1', '2', '3', '4',
-                                    '5', '6', '7', '8', '9'};
-  const std::vector<char> UPPER = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-                                   'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-                                   'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-  const std::vector<char> LOWER = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
-                                   'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-                                   's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+  const std::vector<char> DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+  const std::vector<char> UPPER = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+                                   'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+  const std::vector<char> LOWER = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                                   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
   const std::vector<char> SPECIAL = {'!', '@', '#', '$', '%', '^', '&', '*'};
 
   std::random_device rd;
-  void Fill(std::vector<char>& password, const std::vector<char>& pool,
-            unsigned int count);
+  void Fill(std::vector<char>& password, const std::vector<char>& pool, unsigned int count);
 };
