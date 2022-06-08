@@ -39,8 +39,7 @@ int main(int argc, char* argv[]) {
   unsigned int count = 1;
 
   int c, opt_idx;
-  while ((c = getopt_long(argc, argv, "SDLUc:l:", long_opts, &opt_idx)) !=
-         -1) {
+  while ((c = getopt_long(argc, argv, "SDLUc:l:", long_opts, &opt_idx)) != -1) {
     switch (c) {
       case 'c': {
         try {

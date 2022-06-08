@@ -10,8 +10,8 @@ struct GenerationOptions {
   unsigned int length = 32;
   unsigned int max_uppercase = 0;
   unsigned int max_lowercase = 0;
-  unsigned int max_digits = 2;
-  unsigned int max_symbols = 2;
+  unsigned int max_digits = 0;
+  unsigned int max_symbols = 0;
 
   bool Validate() const {
     // If we have at least one class with a '0' max length (unlimited) we can
