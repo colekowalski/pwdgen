@@ -8,3 +8,5 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
 endif()
 
 add_executable(pwdgen src/main.cc src/password_generator.cc)
+
+install(TARGETS pwdgen)
