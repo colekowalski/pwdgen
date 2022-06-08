@@ -10,3 +10,8 @@ endif()
 add_executable(pwdgen src/main.cc src/password_generator.cc)
 
 install(TARGETS pwdgen)
+
+if(UNIX)
+    include(GNUInstallDirs)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/doc/pwdgen.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+endif(UNIX)

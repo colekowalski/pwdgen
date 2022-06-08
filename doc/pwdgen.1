@@ -1,0 +1,57 @@
+.TH PWDGEN 1
+.SH NAME
+pwdgen - secure random password generator
+.SH SYNOPSIS
+.B pwdgen
+[\fIOPTION\fR]...
+.SH DESCRIPTION
+pwdgen generates random password based on specified criteria
+.SH OPTIONS
+.TP
+.B \-l, \--length=32
+Password length to generate
+.TP
+.B \-c, \--count=1
+Number of passwords to generate
+.TP
+.B \-S, \--no-symbols
+Do not include special characters in generated passwords
+.TP
+.B \-D, \--no-digits
+Do not include numerical digits in generated passwords
+.TP
+.B \-U, \--no-uppercase
+Do not include uppercase characters in generated passwords
+.TP
+.B \-L, \--no-lowercase
+Do not include lowercase characters in generated passwords
+.TP
+.B \--max-symbols=NUM
+Maximum number of special characters to include in generated passwords.
+This sets the upper bound but it not a guarantee that the specified number of
+characters will be used in password generation.
+
+A value of '0' is unlimited
+.TP
+.B \--max-digits=NUM
+Maximum number of numerical digits to include in generated passwords.
+This sets the upper bound but it not a guarantee that the specified number of
+characters will be used in password generation.
+
+A value of '0' is unlimited
+.TP
+.B \--max-uppercase=NUM
+Maximum number of uppercase characters to include in generated passwords
+This sets the upper bound but it not a guarantee that the specified number of
+characters will be used in password generation.
+
+A value of '0' is unlimited
+.TP
+.B \--max-lowercase=NUM
+Maximum number of lowercase characters to include in generated passwords
+This sets the upper bound but it not a guarantee that the specified number of
+characters will be used in password generation.
+
+A value of '0' is unlimited
+.SH AUTHOR
+Cole Kowalski <cole@northernbloc.org>
